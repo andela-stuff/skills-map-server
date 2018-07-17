@@ -1,0 +1,48 @@
+{
+  "name": "skills-map-server",
+  "version": "1.0.0",
+  "description": "The server for skills-map.herokuapp.com",
+  "main": "./src/server.js",
+  "scripts": {
+    "babel-node": "babel-node --preset=env",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec npm run babel-node -- ./src/server.js",
+    "db:init": "psql -U postgres -c 'drop database db_skill_map;' && psql -c 'create database db_skill_map;' -U postgres && psql ",
+    "db:uuid": "psql -U postgres -d db_skill_map -c 'CREATE EXTENSION IF NOT EXISTS 'uuid-ossp;''",
+    "migrate": "cd src && sequelize db:migrate",
+    "undo:migrate": "cd src && sequelize db:migrate:undo:all",
+    "seed": " cd src && sequelize db:seed:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-stuff/skills-map-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-stuff/skills-map-server/issues"
+  },
+  "homepage": "https://github.com/andela-stuff/skills-map-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0",
+    "nodemon": "^1.17.5"
+  }
+}
