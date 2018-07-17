@@ -1,5 +1,5 @@
 /**
- * @fileOverview Apllication's entry point
+ * @fileOverview Application's entry point
  *
  * @author Oluwasegun Matthews
  *
@@ -7,6 +7,7 @@
  * @requires NPM:morgan
  * @requires NPM:cors
  * @requires NPM:bodyParser
+ * @requires NPM:dotenv
  * @requires ./utils/logger
  */
 
@@ -14,7 +15,11 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 import winston from './utils/logger';
+
+dotenv.config();
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 
 const app = express();
