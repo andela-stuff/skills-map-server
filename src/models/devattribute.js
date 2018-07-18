@@ -1,11 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
   const DevAttribute = sequelize.define('DevAttribute', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -13,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   DevAttribute.associate = (models) => {
-    DevAttribute.hasMany(models.DevAttributeSkills, {
-      foreignKeys: 'devAttributesId',
+    DevAttribute.hasMany(models.DevAttributeSkill, {
+      foreignKeys: 'devAttributeSkillId',
       as: 'devAttributeSkills',
     });
   };

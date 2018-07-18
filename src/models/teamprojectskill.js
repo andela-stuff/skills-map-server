@@ -1,20 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
   const TeamProjectSkill = sequelize.define('TeamProjectSkill', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     skillId: DataTypes.INTEGER,
     teamProjectid: DataTypes.INTEGER,
   }, {});
   TeamProjectSkill.associate = (models) => {
-    TeamProjectSkill.belongsTo(models.Skills, {
+    TeamProjectSkill.belongsTo(models.Skill, {
       foreignKey: 'skillId',
       as: 'skills',
     });
-    TeamProjectSkill.belongsTo(models.TeamProjects, {
+    TeamProjectSkill.belongsTo(models.TeamProject, {
       foreignKey: 'teamProjectId',
       as: 'teamProjects',
     });

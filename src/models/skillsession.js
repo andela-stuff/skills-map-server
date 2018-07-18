@@ -1,11 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
   const SkillSession = sequelize.define('SkillSession', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -13,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   SkillSession.associate = (models) => {
-    SkillSession.hasMany(models.skillSessionSkills, {
+    SkillSession.hasMany(models.SkillSessionSkill, {
       foreignKeys: 'lmsOutputSkillsId',
       as: 'lmsOutputSkills',
     });

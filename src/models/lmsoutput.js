@@ -1,11 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
   const LmsOutput = sequelize.define('LmsOutput', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -18,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   LmsOutput.associate = (models) => {
-    LmsOutput.hasMany(models.LmsOutputSkills, {
+    LmsOutput.hasMany(models.LmsOutputSkill, {
       foreignKeys: 'lmsOutputSkillsId',
       as: 'lmsOutputSkills',
     });

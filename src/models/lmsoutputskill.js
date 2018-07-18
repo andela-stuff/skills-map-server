@@ -1,20 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
   const LmsOutputSkill = sequelize.define('LmsOutputSkill', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     skillId: DataTypes.INTEGER,
     lmsOutputId: DataTypes.INTEGER,
   }, {});
   LmsOutputSkill.associate = (models) => {
-    LmsOutputSkill.belongsTo(models.Skills, {
+    LmsOutputSkill.belongsTo(models.Skill, {
       foreignKey: 'skillId',
       as: 'skills',
     });
-    LmsOutputSkill.belongsTo(models.LmsOutputs, {
+    LmsOutputSkill.belongsTo(models.LmsOutput, {
       foreignKey: 'lmsOutputId',
       as: 'lmsOutputs',
     });

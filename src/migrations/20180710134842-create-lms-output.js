@@ -2,6 +2,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('LmsOutputs', {
     id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
 
