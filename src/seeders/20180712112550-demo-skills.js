@@ -48,6 +48,12 @@ module.exports = {
     updatedAt: new Date(),
   },
   {
+    name: 'Business Tools',
+    level: 'd0a',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
     name: 'Calender',
     level: 'd0a',
     createdAt: new Date(),
@@ -96,6 +102,12 @@ module.exports = {
     updatedAt: new Date(),
   },
   {
+    name: 'DevOps',
+    level: null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
     name: 'Discrete Math & Algebra',
     level: 'd0a',
     createdAt: new Date(),
@@ -120,6 +132,12 @@ module.exports = {
     updatedAt: new Date(),
   },
   {
+    name: 'Expectations Management',
+    level: 'd0b',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
     name: 'Focus & Concentration',
     level: 'd0a',
     createdAt: new Date(),
@@ -134,6 +152,12 @@ module.exports = {
   {
     name: 'Git',
     level: 'd0a',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    name: 'Google/Zoom Hangouts',
+    level: 'd0b',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -156,8 +180,20 @@ module.exports = {
     updatedAt: new Date(),
   },
   {
+    name: 'Leadership',
+    level: 'd0a',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
     name: 'Managing Expectation',
     level: 'd0a',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    name: 'Mentorship',
+    level: 'd0b',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -216,6 +252,18 @@ module.exports = {
     updatedAt: new Date(),
   },
   {
+    name: 'Project Management Tools',
+    level: 'd0b',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    name: 'Proper use of environments',
+    level: 'd0b',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
     name: 'Reading to Understand',
     level: 'd0a',
     createdAt: new Date(),
@@ -228,19 +276,19 @@ module.exports = {
     updatedAt: new Date(),
   },
   {
+    name: 'Scoping and estimation',
+    level: 'd0a',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
     name: 'Security',
     level: 'd0a',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    name: 'Seeking Feddback',
-    level: 'd0a',
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    name: 'Skype / Hangouts',
+    name: 'Seeking Feedback',
     level: 'd0a',
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -312,8 +360,20 @@ module.exports = {
     updatedAt: new Date(),
   },
   {
+    name: 'Vision Alignment',
+    level: 'd0a',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
     name: 'Willingness to Ask Questions',
     level: 'd0a',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    name: 'Workflow and Automation',
+    level: null,
     createdAt: new Date(),
     updatedAt: new Date(),
   },

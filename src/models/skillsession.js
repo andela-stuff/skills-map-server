@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   SkillSession.associate = (models) => {
     SkillSession.hasMany(models.SkillSessionSkill, {
-      foreignKeys: 'lmsOutputSkillsId',
-      as: 'lmsOutputSkills',
+      foreignKey: 'skillSessionId',
+      as: 'skillSessionSkills',
     });
   };
   return SkillSession;

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   DevAttribute.associate = (models) => {
     DevAttribute.hasMany(models.DevAttributeSkill, {
-      foreignKeys: 'devAttributeSkillId',
+      foreignKey: 'devAttributeId',
       as: 'devAttributeSkills',
     });
   };

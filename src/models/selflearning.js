@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   SelfLearning.associate = (models) => {
     SelfLearning.hasMany(models.SelfLearningSkill, {
-      foreignKeys: 'selfLearningSkillId',
+      foreignKeys: 'selfLearningId',
       as: 'selfLearningSkills',
     });
   };

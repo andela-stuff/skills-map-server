@@ -23,7 +23,6 @@ import routes from './routes';
 dotenv.config();
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-
 const app = express();
 
 const port = parseInt(process.env.PORT, 10) || 8008;
@@ -40,6 +39,7 @@ app.use((req, res, next) => {
 
 routes(app);
 
+
 app.get('*', (req, res) => res.status(200).send({
   message: 'This is skill-map-server',
 }));
@@ -47,3 +47,5 @@ app.get('*', (req, res) => res.status(200).send({
 app.listen(port, () => {
   winston('info', `Server running on port ${port}`);
 });
+
+export default app;

@@ -12,6 +12,8 @@ import SkillSessionController from '../controllers/SkillSessionController';
 
 const skillSessionRouter = express.Router();
 
-skillSessionRouter.get('/skillSession', SkillSessionController.getAllSkillSessions);
+skillSessionRouter.get('/skillSessions', SkillSessionController.getAllSkillSessions);
+skillSessionRouter.get('/skillSessionSkills', SkillSessionController.getSkillSessionSkills);
+skillSessionRouter.get('/skillSessions/:skillSessionId', SkillSessionController.getSkillSession);
 
 export default skillSessionRouter;

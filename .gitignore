@@ -3,3 +3,5 @@ logs/
 .env
 .DS_Store
 package-lock.json
+coverage
+.nyc_output

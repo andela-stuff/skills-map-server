@@ -6,11 +6,11 @@ module.exports = (sequelize, DataTypes) => {
   SkillSessionSkill.associate = (models) => {
     SkillSessionSkill.belongsTo(models.Skill, {
       foreignKey: 'skillId',
-      as: 'skills',
+      as: 'skill',
     });
     SkillSessionSkill.belongsTo(models.SkillSession, {
       foreignKey: 'skillSessionId',
-      as: 'skillSessions',
+      as: 'skillSession',
     });
   };
   return SkillSessionSkill;

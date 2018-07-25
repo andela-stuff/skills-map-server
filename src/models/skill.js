@@ -12,24 +12,24 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Skill.associate = (models) => {
     Skill.hasMany(models.DevAttributeSkill, {
-      foriegnKey: 'skillId',
-      as: 'devAttributeSkills',
+      foreignKey: 'skillId',
+      as: 'devAttributes',
     });
     Skill.hasMany(models.LmsOutputSkill, {
-      foriegnKey: 'skillId',
-      as: 'lmsOutputSkills',
+      foreignKey: 'skillId',
+      as: 'lmsOutputs',
     });
     Skill.hasMany(models.SelfLearningSkill, {
-      foriegnKey: 'skillId',
-      as: 'selfLearningSkills',
+      foreignKey: 'skillId',
+      as: 'selfLearnings',
     });
     Skill.hasMany(models.TeamProjectSkill, {
-      foriegnKey: 'skillId',
-      as: 'teamProjectSkills',
+      foreignKey: 'skillId',
+      as: 'teamProjects',
     });
     Skill.hasMany(models.SkillSessionSkill, {
-      foriegnKey: 'skillId',
-      as: 'skillSessionSkills',
+      foreignKey: 'skillId',
+      as: 'skillSessions',
     });
   };
   return Skill;

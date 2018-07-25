@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   SelfLearningSkill.associate = (models) => {
     SelfLearningSkill.belongsTo(models.Skill, {
       foreignKey: 'skillId',
-      as: 'skills',
+      as: 'skill',
     });
     SelfLearningSkill.belongsTo(models.SelfLearning, {
       foreignKey: 'selfLearningId',

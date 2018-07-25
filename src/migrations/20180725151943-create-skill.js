@@ -12,7 +12,7 @@ module.exports = {
     },
     level: {
       type: Sequelize.ENUM('d0a', 'd0b', 'd1', 'd2', 'd3', 'd4'),
-      allowNull: false,
+      allowNull: true,
       defaultValue: 'd0a',
     },
     createdAt: {

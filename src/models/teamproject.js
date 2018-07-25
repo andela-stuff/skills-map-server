@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   TeamProject.associate = (models) => {
     TeamProject.hasMany(models.TeamProjectSkill, {
-      foreignKeys: 'teamProjectSkillId',
+      foreignKeys: 'teamProjectId',
       as: 'teamProjectSkills',
     });
   };

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   LmsOutput.associate = (models) => {
     LmsOutput.hasMany(models.LmsOutputSkill, {
-      foreignKeys: 'lmsOutputSkillsId',
+      foreignKey: 'lmsOutputId',
       as: 'lmsOutputSkills',
     });
   };

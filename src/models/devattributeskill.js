@@ -6,11 +6,11 @@ module.exports = (sequelize, DataTypes) => {
   DevAttributeSkill.associate = (models) => {
     DevAttributeSkill.belongsTo(models.Skill, {
       foreignKey: 'skillId',
-      as: 'skills',
+      as: 'skill',
     });
     DevAttributeSkill.belongsTo(models.DevAttribute, {
       foreignKey: 'devAttributeId',
-      as: 'devAttributes',
+      as: 'devAttribute',
     });
   };
   return DevAttributeSkill;
