@@ -1,22 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
   const DevAttributeSkill = sequelize.define('DevAttributeSkill', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     skillId: DataTypes.INTEGER,
     devAttributeId: DataTypes.INTEGER,
   }, {});
   DevAttributeSkill.associate = (models) => {
-    DevAttributeSkill.belongsTo(models.Skills, {
+    DevAttributeSkill.belongsTo(models.Skill, {
       foreignKey: 'skillId',
-      as: 'skills',
+      as: 'skill',
     });
-    DevAttributeSkill.belongsTo(models.DevAttributes, {
+    DevAttributeSkill.belongsTo(models.DevAttribute, {
       foreignKey: 'devAttributeId',
-      as: 'devAttributes',
+      as: 'devAttribute',
     });
   };
   return DevAttributeSkill;

@@ -1,7 +1,8 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('SelfLearnings', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('DevAttributes', {
     id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
 
@@ -19,5 +20,5 @@ module.exports = {
       type: Sequelize.DATE,
     },
   }),
-  down: queryInterface => queryInterface.dropTable('SelfLearnings'),
+  down: queryInterface => queryInterface.dropTable('DevAttributes'),
 };

@@ -1,9 +1,11 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('SkillSessions', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('TeamProjects', {
     id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
+
     },
     name: {
       type: Sequelize.STRING,
@@ -18,5 +20,5 @@ module.exports = {
       type: Sequelize.DATE,
     },
   }),
-  down: queryInterface => queryInterface.dropTable('SkillSessions'),
+  down: queryInterface => queryInterface.dropTable('TeamProjects'),
 };

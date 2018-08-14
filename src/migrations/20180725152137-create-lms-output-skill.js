@@ -1,7 +1,8 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('TeamProjectSkills', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('LmsOutputSkills', {
     id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
 
@@ -15,13 +16,13 @@ module.exports = {
         as: 'skillId',
       },
     },
-    teamProjectId: {
+    lmsOutputId: {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {
-        model: 'TeamProjects',
+        model: 'LmsOutputs',
         key: 'id',
-        as: 'teamProjectId',
+        as: 'lmsOutputId',
       },
     },
     createdAt: {
@@ -33,5 +34,5 @@ module.exports = {
       type: Sequelize.DATE,
     },
   }),
-  down: queryInterface => queryInterface.dropTable('TeamProjectSkills'),
+  down: queryInterface => queryInterface.dropTable('LmsOutputSkills'),
 };

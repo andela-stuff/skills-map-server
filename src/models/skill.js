@@ -1,11 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
   const Skill = sequelize.define('Skill', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -17,25 +11,25 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Skill.associate = (models) => {
-    Skill.hasMany(models.DevAttributeSkills, {
-      foriegnKey: 'skillId',
-      as: 'devAttributeSkills',
+    Skill.hasMany(models.DevAttributeSkill, {
+      foreignKey: 'skillId',
+      as: 'devAttributes',
     });
-    Skill.hasMany(models.LmsOutputSkills, {
-      foriegnKey: 'skillId',
-      as: 'lmsOutputSkills',
+    Skill.hasMany(models.LmsOutputSkill, {
+      foreignKey: 'skillId',
+      as: 'lmsOutputs',
     });
-    Skill.hasMany(models.SelfLearningSkills, {
-      foriegnKey: 'skillId',
-      as: 'selfLearningSkills',
+    Skill.hasMany(models.SelfLearningSkill, {
+      foreignKey: 'skillId',
+      as: 'selfLearnings',
     });
-    Skill.hasMany(models.TeamProjectSkills, {
-      foriegnKey: 'skillId',
-      as: 'teamProjectSkills',
+    Skill.hasMany(models.TeamProjectSkill, {
+      foreignKey: 'skillId',
+      as: 'teamProjects',
     });
-    Skill.hasMany(models.SelfLearningSkills, {
-      foriegnKey: 'skillId',
-      as: 'selfLearningSkills',
+    Skill.hasMany(models.SkillSessionSkill, {
+      foreignKey: 'skillId',
+      as: 'skillSessions',
     });
   };
   return Skill;

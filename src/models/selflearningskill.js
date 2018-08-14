@@ -1,20 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
   const SelfLearningSkill = sequelize.define('SelfLearningSkill', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     skillId: DataTypes.INTEGER,
     selfLearningId: DataTypes.INTEGER,
   }, {});
   SelfLearningSkill.associate = (models) => {
-    SelfLearningSkill.belongsTo(models.Skills, {
+    SelfLearningSkill.belongsTo(models.Skill, {
       foreignKey: 'skillId',
-      as: 'skills',
+      as: 'skill',
     });
-    SelfLearningSkill.belongsTo(models.SelfLearnings, {
+    SelfLearningSkill.belongsTo(models.SelfLearning, {
       foreignKey: 'selfLearningId',
       as: 'selfLearning',
     });

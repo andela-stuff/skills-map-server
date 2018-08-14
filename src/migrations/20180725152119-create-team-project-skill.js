@@ -1,7 +1,8 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('DevAttributeSkills', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('TeamProjectSkills', {
     id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
 
@@ -15,13 +16,13 @@ module.exports = {
         as: 'skillId',
       },
     },
-    devAttributeId: {
+    teamProjectId: {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {
-        model: 'DevAttributes',
+        model: 'TeamProjects',
         key: 'id',
-        as: 'devAttributeId',
+        as: 'teamProjectId',
       },
     },
     createdAt: {
@@ -33,5 +34,5 @@ module.exports = {
       type: Sequelize.DATE,
     },
   }),
-  down: queryInterface => queryInterface.dropTable('DevAttributeSkills'),
+  down: queryInterface => queryInterface.dropTable('TeamProjectSkills'),
 };

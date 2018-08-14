@@ -1,11 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
   const SelfLearning = sequelize.define('SelfLearning', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -13,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   SelfLearning.associate = (models) => {
-    SelfLearning.hasMany(models.SelfLearningSkills, {
-      foreignKeys: 'selfLearningSkillId',
+    SelfLearning.hasMany(models.SelfLearningSkill, {
+      foreignKeys: 'selfLearningId',
       as: 'selfLearningSkills',
     });
   };

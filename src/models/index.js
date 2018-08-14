@@ -6,16 +6,18 @@ import config from '../config/config';
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 
+
 const envConfig = config[env];
+
 const db = {};
 let sequelize;
-if (envConfig.use_env_variable) {
+if (process.env[envConfig.use_env_variable]) {
   sequelize = new Sequelize(process.env[envConfig.use_env_variable], envConfig);
 } else {
   sequelize = new Sequelize(
     envConfig.database,
-    process.env[envConfig.username],
-    process.env[envConfig.password],
+    envConfig.username,
+    envConfig.password,
     envConfig
   );
 }
@@ -27,6 +29,7 @@ fs
     const model = sequelize.import(path.join(__dirname, file));
     db[model.name] = model;
   });
+
 
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {

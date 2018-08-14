@@ -1,7 +1,8 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('TeamProjects', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('LmsOutputs', {
     id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
 
@@ -9,6 +10,11 @@ module.exports = {
     name: {
       type: Sequelize.STRING,
       unique: true,
+    },
+    level: {
+      type: Sequelize.ENUM('d0a', 'd0b', 'd1', 'd2', 'd3', 'd4'),
+      allowNull: false,
+      defaultValue: 'd0a',
     },
     createdAt: {
       allowNull: false,
@@ -19,5 +25,5 @@ module.exports = {
       type: Sequelize.DATE,
     },
   }),
-  down: queryInterface => queryInterface.dropTable('TeamProjects'),
+  down: queryInterface => queryInterface.dropTable('LmsOutputs'),
 };

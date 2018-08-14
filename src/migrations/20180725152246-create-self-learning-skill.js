@@ -2,6 +2,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('SelfLearningSkills', {
     id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
 
